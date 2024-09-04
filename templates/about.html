@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock title %}
+<style>/* Custom styles for the about page */
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h3 {
+    color: #333;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+    border-color: #357abd;
+}
+</style>
+{% block body %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4" style="background-color: #4a90e2; color: white; padding: 15px; border-radius: 8px;">About Us</h2>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="about-image">
+                <img src="{% static 'about.jpg' %}" class="img-fluid rounded" alt="About Us">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h3>Welcome to MyBlog!</h3>
+            <p>
+                At MyBlog, we are passionate about sharing insights, stories, and information on a variety of topics. Our team of dedicated writers aims to provide engaging and high-quality content that keeps you informed and entertained.
+            </p>
+            <p>
+                Whether you're looking for the latest trends, in-depth articles, or simply a good read, you'll find it here. We are committed to delivering content that resonates with our readers and adds value to their lives.
+            </p>
+            <p>
+                Thank you for visiting MyBlog. We hope you enjoy your stay and find our content both informative and enjoyable.
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'index' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock body %}

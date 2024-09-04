@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock title %}
+<link href="{% static 'contact.css' %}" rel="stylesheet" type="text/css">
+{% block body %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4" style="background-color: #4a90e2; color: white; padding: 15px; border-radius: 8px;">Contact Us</h2>
+    
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Get in Touch</h3>
+            <p>If you have any questions, comments, or suggestions, feel free to reach out. We're here to help and would love to hear from you.</p>
+            <p><strong>Email:</strong> support@myblog.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Address:</strong> 123 Blog Street, Blog City, BL 12345</p>
+        </div>
+        <div class="col-lg-6">
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
